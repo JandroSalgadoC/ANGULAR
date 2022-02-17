@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "appProyecto": {
+    "angular_Alejandro_Salgado": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-proyecto",
+            "outputPath": "dist/angular-alejandro-salgado",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "appProyecto:build:production"
+              "browserTarget": "angular_Alejandro_Salgado:build:production"
             },
             "development": {
-              "browserTarget": "appProyecto:build:development"
+              "browserTarget": "angular_Alejandro_Salgado:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "appProyecto:build"
+            "browserTarget": "angular_Alejandro_Salgado:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "appProyecto"
+  "defaultProject": "angular_Alejandro_Salgado"
 }
