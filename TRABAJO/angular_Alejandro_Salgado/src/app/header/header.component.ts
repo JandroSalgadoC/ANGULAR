@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  user = '';
+  password = '';
+  userloged = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login(): void {
+    if (this.user == 'admin' && this.password == '1234') {
+      this.userloged = this.user;
+    }
+  }
+
+  logout():void {
+    this.user = '';
+    this.password = '';
+    this.userloged = '';
   }
 
 }
