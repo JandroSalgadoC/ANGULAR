@@ -10,6 +10,7 @@ import { RegistroComponent } from './registro/registro.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FechaComponent } from './fecha/fecha.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
