@@ -7,19 +7,21 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FechaComponent } from './fecha/fecha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent, 
     HeaderComponent, 
-    FooterComponent, RegistroComponent
+    FooterComponent, RegistroComponent, FechaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
