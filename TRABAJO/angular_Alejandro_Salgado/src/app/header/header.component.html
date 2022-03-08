@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark align-middle">
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="/"><h2 class="text-warning">Jandro Angular</h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
@@ -10,7 +10,7 @@
                     <a class="nav-link" aria-current="page"  routerLink="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acerca de</a>
+                    <a class="nav-link dropdown-toggle" routerLink="/acercade" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acerca de</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">El Autor</a></li>
                         <li><a class="dropdown-item" href="#">Las Herramientas</a></li>
@@ -28,9 +28,9 @@
                 <input name="password" class="form-control me-2" type="password" placeholder="Password" [(ngModel)]="password" />
                 <button class="btn btn-warning" type="submit" (click)="login()">Login</button>
             </form>
-            <div  *ngIf="userloged">
-                <p  class="text-warning">Bienvenido, <span [innerHTML]="userloged.username"></span></p>
-                <button class="btn btn-danger" (click)="logout()">Logout</button>
+            <div class="d-flex mb-2 mb-lg-0 align-middle " *ngIf="userloged">
+                <span class="text-warning align-middle">Bienvenido, <span [innerHTML]="userloged.username"></span></span>
+                <button class="btn btn-danger ms-3" (click)="logout()">Logout</button>
             </div>
         </div>
     </div>

@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioStorageService } from '../usuario-storage.service';
 
+export interface Usuario {
+  username: string;
+  fullname: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [UsuarioStorageService]
 })
 export class HomeComponent implements OnInit {
- //atributo usuario logueado para el template blokear la entrada o lo ke sea. 
-  constructor() { }
+  userloged: Usuario;
+  constructor(private usuarioStorageService: UsuarioStorageService) { }
 
   ngOnInit(): void {
   }
 
+  isLoged() {
+    this.userloged = this.usuarioStorageService.getUsuarioLogueado();
+    return this.userloged;
+  }
 }
+
+
+

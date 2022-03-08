@@ -1,1 +1,9 @@
-<p>home works!</p>
+
+<div class="d-flex mb-2 mb-lg-0 align-middle " *ngIf="isLoged()">
+    <p class="text-warning align-middle">Bienvenido, <span [innerHTML]="userloged.username"></span></p>
+</div>
+<div class="d-flex mb-2 mb-lg-0 align-middle " *ngIf="!isLoged()">
+    <p class="text-warning align-middle">No logueado</p>
+</div>
+
+

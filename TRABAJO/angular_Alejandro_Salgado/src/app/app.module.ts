@@ -10,6 +10,8 @@ import { RegistroComponent } from './registro/registro.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FechaComponent } from './fecha/fecha.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { AcercadeComponent } from './acercade/acercade.component';
+import { DinoTableComponent } from './dino-table/dino-table.component';
 
 
 @NgModule({
@@ -17,7 +19,7 @@ import { FormularioComponent } from './formulario/formulario.component';
     AppComponent,
     HomeComponent, 
     HeaderComponent, 
-    FooterComponent, RegistroComponent, FechaComponent, FormularioComponent
+    FooterComponent, RegistroComponent, FechaComponent, FormularioComponent, AcercadeComponent, DinoTableComponent
   ],
   imports: [
     BrowserModule,
