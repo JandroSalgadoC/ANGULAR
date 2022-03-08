@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.externo {
+    display: flex;
+    flex-flow: column;
+    min-height: calc(100vh - 160px);
+}
+
+.inner-placeholder {
+    flex: 1;
+}
+
+app-footer {
+    flex: content;
+}

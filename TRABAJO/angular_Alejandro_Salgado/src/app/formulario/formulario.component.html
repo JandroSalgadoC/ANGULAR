@@ -1,80 +1,88 @@
-<div class="register-form">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Nombre Completo</label>
-      <input type="text" formControlName="fullname" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }" />
-      <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-        <div *ngIf="f['fullname'].errors['required']">Nombre Completo requerido.</div>
+<div class="d-flex justify-content-center">
+  <div class="card col-8">
+      <div class="card-body">
+      <h1 class="card-title text-center display-6">Formulario de Registro</h1>
+      <hr> 
+      <div class="register-form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" formControlName="fullname" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }" />
+            <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+              <div *ngIf="f['fullname'].errors['required']">Nombre Completo requerido.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nombre de Usuario</label>
+            <input type="text" formControlName="username" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+            <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+              <div *ngIf="f['username'].errors['required']">Nombre de Usuario requerido</div>
+              <div *ngIf="f['username'].errors['minlength']">
+                El nombre de usuario debe tener al menos 6 caracteres.
+              </div>
+              <div *ngIf="f['username'].errors['maxlength']">
+                El nombre de usuario debe tener máximo 20 caracteres.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': (submitted && f['email'].errors) || errorGuardar }" />
+            <div *ngIf="(submitted && f['email'].errors)" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email requerido</div>
+              <div *ngIf="f['email'].errors['email']">Email inválido</div>
+            </div>
+            <div *ngIf="errorGuardar" class="invalid-feedback">
+              <div *ngIf="errorGuardar">El email ya está registrado</div>
+            </div>
+    
+          </div>
+          <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" formControlName="password" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+              <div *ngIf="f['password'].errors['required']">Contraseña requerida</div>
+              <div *ngIf="f['password'].errors['minlength']">
+                La contraseña debe tener al menos 6 caracteres.
+              </div>
+              <div *ngIf="f['password'].errors['maxlength']">
+                El nombre de usuario debe tener máximo 40 caracteres.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Repetir Contraseña</label>
+            <input type="password" formControlName="confirmPassword" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
+            <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+              <div *ngIf="f['confirmPassword'].errors['required']">
+                Repetir contraseña requerida
+              </div>
+              <div *ngIf="f['confirmPassword'].errors['matching']">
+                Las contraseñas no coinciden
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
+              [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
+            <label for="acceptTerms" class="form-check-label">He leído y acepto los términos.</label>
+            <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+              Debes aceptar los términos para registrarte.
+            </div>
+          </div>
+          <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary me-2">Registrar</button>
+            <button type="button" (click)="onReset()" class="btn btn-warning">
+              Reiniciar
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="form-group">
-      <label>Nombre de Usuario</label>
-      <input type="text" formControlName="username" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
-      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-        <div *ngIf="f['username'].errors['required']">Nombre de Usuario requerido</div>
-        <div *ngIf="f['username'].errors['minlength']">
-          El nombre de usuario debe tener al menos 6 caracteres.
-        </div>
-        <div *ngIf="f['username'].errors['maxlength']">
-          El nombre de usuario debe tener máximo 20 caracteres.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text" formControlName="email" class="form-control"
-        [ngClass]="{ 'is-invalid': (submitted && f['email'].errors) || errorGuardar }" />
-      <div *ngIf="(submitted && f['email'].errors)" class="invalid-feedback">
-        <div *ngIf="f['email'].errors['required']">Email requerido</div>
-        <div *ngIf="f['email'].errors['email']">Email inválido</div>
-      </div>
-      <div *ngIf="errorGuardar" class="invalid-feedback">
-        <div *ngIf="errorGuardar">El email ya está registrado</div>
-      </div>
-
-    </div>
-    <div class="form-group">
-      <label>Contraseña</label>
-      <input type="password" formControlName="password" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
-      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-        <div *ngIf="f['password'].errors['required']">Contraseña requerida</div>
-        <div *ngIf="f['password'].errors['minlength']">
-          La contraseña debe tener al menos 6 caracteres.
-        </div>
-        <div *ngIf="f['password'].errors['maxlength']">
-          El nombre de usuario debe tener máximo 40 caracteres.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Repetir Contraseña</label>
-      <input type="password" formControlName="confirmPassword" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
-      <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
-        <div *ngIf="f['confirmPassword'].errors['required']">
-          Repetir contraseña requerida
-        </div>
-        <div *ngIf="f['confirmPassword'].errors['matching']">
-          Las contraseñas no coinciden
-        </div>
-      </div>
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
-        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
-      <label for="acceptTerms" class="form-check-label">He leído y acepto los términos.</label>
-      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
-        Debes aceptar los términos para registrarte.
-      </div>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Registrar</button>
-      <button type="button" (click)="onReset()" class="btn btn-warning float-right">
-        Reiniciar
-      </button>
-    </div>
-  </form>
+  </div>  
 </div>
