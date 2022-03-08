@@ -1,25 +1,30 @@
-<div class="container mt-5">  
-    <h2>Angular Display Data from Json File Example</h2>
-    
-    <table class="table table-striped">
-      <thead>
-          <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Era</th>
-            <th>Dieta</th>
-            <th>Altura</th>
-            <th>Longitud</th>
-            <th>Peso</th>
-          </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let dino of Dinosaurios">
-          <td>{{ dino.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container mt-5">
+  <h2>Welcome to Jurassic Park</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Era</th>
+        <th>Dieta</th>
+        <th>Altura</th>
+        <th>Longitud</th>
+        <th>Peso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dino of Dinosuarios">
+        <td>
+          <img src="{{imageRoute}}{{dino.image}}" class="img-responsive img-thumbnail dinoFoto">
+        </td>
+        <td>{{ dino.name }}</td>
+        <td>{{ dino.era }}</td>
+        <td>{{ dino.diet }}</td>
+        <td>{{ dino.feetTall }}''</td>
+        <td>{{ dino.feetLong }}''</td>
+        <td>{{ dino.pounds }} lbs</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
