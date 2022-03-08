@@ -1,31 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UsuarioStorageService } from '../usuario-storage.service';
+export interface Usuario{
+  username:string;
+  fullname:string;
+}
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers: [UsuarioStorageService]
 })
 export class HeaderComponent implements OnInit {
+  
+  mail: string;
+  password: string;
+  userloged: Usuario;
 
-  user = '';
-  password = '';
-  userloged = '';
-
-  constructor() { }
+  constructor(private usuarioStorageService: UsuarioStorageService) {}
 
   ngOnInit(): void {
   }
 
   login(): void {
-    if (this.user == 'admin' && this.password == '1234') {
-      this.userloged = this.user;
-    }
+    this.userloged =this.usuarioStorageService.compruebaUsuario(this.mail, this.password);
   }
 
   logout():void {
-    this.user = '';
+    this.mail = '';
     this.password = '';
-    this.userloged = '';
+    this.userloged = undefined;
+    this.usuarioStorageService.logoutUsuario();
   }
 
 }

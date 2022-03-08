@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+ //atributo usuario logueado para el template blokear la entrada o lo ke sea. 
   constructor() { }
 
   ngOnInit(): void {

@@ -23,13 +23,13 @@
                     <a class="nav-link" routerLink="/registro">Registro</a>
                 </li>
             </ul>
-            <form class="d-flex col-4" *ngIf="userloged == '' ">
-                <input name="user" class="form-control me-2" type="text" placeholder="Username" [(ngModel)]="user" />
+            <form class="d-flex col-4" *ngIf="!userloged">
+                <input name="user" class="form-control me-2" type="text" placeholder="Mail" [(ngModel)]="mail" />
                 <input name="password" class="form-control me-2" type="password" placeholder="Password" [(ngModel)]="password" />
                 <button class="btn btn-warning" type="submit" (click)="login()">Login</button>
             </form>
-            <div  *ngIf="userloged != '' ">
-                <p  class="text-warning">Bienvenido, <span [innerHTML]="userloged"></span></p>
+            <div  *ngIf="userloged">
+                <p  class="text-warning">Bienvenido, <span [innerHTML]="userloged.username"></span></p>
                 <button class="btn btn-danger" (click)="logout()">Logout</button>
             </div>
         </div>

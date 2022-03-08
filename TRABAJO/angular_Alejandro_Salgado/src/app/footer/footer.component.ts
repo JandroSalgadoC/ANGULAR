@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   copyright: String = '© Alejandro Salgado para DAWC';
-  hoy: any = new Date();
+  hoy: Date = new Date();
 
   constructor() { }
 

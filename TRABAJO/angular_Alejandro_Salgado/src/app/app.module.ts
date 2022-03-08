@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FechaComponent } from './fecha/fecha.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { FechaComponent } from './fecha/fecha.component';
     AppComponent,
     HomeComponent, 
     HeaderComponent, 
-    FooterComponent, RegistroComponent, FechaComponent
+    FooterComponent, RegistroComponent, FechaComponent, FormularioComponent
   ],
   imports: [
     BrowserModule,
