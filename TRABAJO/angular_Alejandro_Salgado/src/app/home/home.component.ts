@@ -13,6 +13,8 @@ export interface Usuario {
 })
 export class HomeComponent implements OnInit {
   userloged: Usuario;
+  mail: string;
+  password: string;
   constructor(private usuarioStorageService: UsuarioStorageService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,9 @@ export class HomeComponent implements OnInit {
   isLoged() {
     this.userloged = this.usuarioStorageService.getUsuarioLogueado();
     return this.userloged;
+  }
+  login(): void {
+    this.userloged =this.usuarioStorageService.compruebaUsuario(this.mail, this.password);
   }
 }
 

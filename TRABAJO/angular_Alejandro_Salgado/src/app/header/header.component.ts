@@ -25,6 +25,11 @@ export class HeaderComponent implements OnInit {
     this.userloged =this.usuarioStorageService.compruebaUsuario(this.mail, this.password);
   }
 
+  isLoged() {
+    this.userloged = this.usuarioStorageService.getUsuarioLogueado();
+    return this.userloged;
+  }
+
   logout():void {
     this.mail = '';
     this.password = '';

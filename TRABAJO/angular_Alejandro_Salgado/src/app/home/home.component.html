@@ -1,11 +1,22 @@
-
-<div class="d-flex mb-2 mb-lg-0 align-middle " *ngIf="isLoged()">
-    <p class="text-warning align-middle">Bienvenido, <span [innerHTML]="userloged.username"></span></p>
+<div class="d-flex justify-content-center">
+  <div class="d-flex col justify-content-center mb-2 mb-lg-0 align-middle " *ngIf="isLoged()">
+    <p class="text-primaryalign-middle">Bienvenido, <span [innerHTML]="userloged.username"></span></p>
     <app-dino-table></app-dino-table>
+  </div>
+  <div class="d-flex col-5 align-middle " *ngIf="!isLoged()">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title text-center">ACCESO</h5>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-danger text-center">Necesitas estar registrado para acceder al contenido
+        </h6>
+        <input name="user" class="form-control" type="text" placeholder="Mail" [(ngModel)]="mail" />
+        <input name="password" class="form-control mt-1" type="password" placeholder="Password"
+          [(ngModel)]="password" />
+        <button class="btn btn-success mt-2" type="submit" (click)="login()">Login</button>
+        <a class="nav-link" routerLink="/registro">No tengo cuenta, llévame al registro</a>
+      </div>
+    </div>
+  </div>
+
 </div>
-<div class="d-flex mb-2 mb-lg-0 align-middle " *ngIf="!isLoged()">
-    <p class="text-warning align-middle">No logueado</p>
-</div>
-
-
-
