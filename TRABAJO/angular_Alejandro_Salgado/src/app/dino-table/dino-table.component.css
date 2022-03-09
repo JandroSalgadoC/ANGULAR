@@ -1,4 +1,18 @@
 .dinoFoto{
     max-width: 150px;
     max-height: 150px;
+    border-radius: 25px;
+    border: 5px double rgb(232, 232, 232);
+}
+
+.carni{
+    background: linear-gradient(rgb(255, 154, 154), rgb(214, 62, 62));
+}
+
+.herbi{
+    background: linear-gradient(rgb(214, 253, 191),rgb(135, 208, 135));
+}
+
+.omni{
+    background: linear-gradient(rgb(255, 227, 156), rgb(226, 193, 107));
 }

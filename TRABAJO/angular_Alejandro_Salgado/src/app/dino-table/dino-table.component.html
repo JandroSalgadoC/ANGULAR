@@ -1,8 +1,8 @@
-<div class="container mt-5">
-  <h2>Welcome to Jurassic Park!</h2>
+<div class="container mt-3 text-center">
+  <h2 clas="display-4">Welcome to Jurassic Park!</h2>
 
-  <table class="table table-striped">
-    <thead>
+  <table class="table mt-2 px-3 table-hover table-responsive">
+    <thead class="table-dark">
       <tr>
         <th>Imagen</th>
         <th>Nombre</th>
@@ -14,9 +14,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let dino of Dinosuarios" [ngSwitch]="dino.diet">
+      <tr *ngFor="let dino of Dinosuarios" class="align-middle"
+          [ngClass]="{
+                        'carni': dino.diet=='Carnivorous',
+                        'herbi': dino.diet=='Herbivorous',
+                        'omni': dino.diet=='Omnivorous'}">
         <td>
-          <img src="{{imageRoute}}{{dino.image}}" class="img-responsive img-thumbnail dinoFoto">
+          <img src="{{imageRoute}}{{dino.image}}" class="img-responsive shadow dinoFoto">
         </td>
         <td>{{ dino.name }}</td>
         <td>{{ dino.era }}</td>
