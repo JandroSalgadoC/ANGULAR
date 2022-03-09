@@ -8,7 +8,7 @@ export interface Usuario{
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers: [UsuarioStorageService]
+  providers: []
 })
 export class HeaderComponent implements OnInit {
   
