@@ -18,7 +18,7 @@ interface Dinosaurio{
 export class DinoTableComponent implements OnInit {
 
   Dinosuarios: Dinosaurio[] = DinosauriosJSON;
-  imageRoute: string = "../../../../assets/images/"
+  imageRoute: string = "assets/images/"
 
   constructor() { }
 
